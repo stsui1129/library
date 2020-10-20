@@ -1,25 +1,43 @@
+.bookSpace {
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+
+input {
+    display: flex;
+    margin: 10px;
+}
+
+.form-buttons {
+    float: right;
+    margin: 20px 35px;
+}
+
 input#title {
     height: 30px;
-    width: 200px;
+    width: 85%;
     font-size: 20px;
-    border: solid 3px black;
+    border: solid 1px black;
   }
 
   input#author {
     height: 30px;
-    width: 200px;
+    width: 85%;
     font-size: 20px;
-    border: solid 3px black;
+    border: solid 1px black;
   }
 
   input#pages {
     height: 30px;
-    width: 200px;
+    width: 85%;
     font-size: 20px;
-    border: solid 3px black;
+    border: solid 1px black;
   }
   
   input[type=checkbox] {
+    display: inline-block;
     transform: scale(1.5);
   }
 
@@ -48,7 +66,7 @@ input#title {
     background-color: white;
     border: 1px solid #888;
     padding: 1rem 1.5rem;
-    width: 30%;
+    width: 20%;
     border-radius: 0.5rem;
 }
 

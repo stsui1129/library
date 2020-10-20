@@ -19,26 +19,20 @@
                     <label for="author">Author: </label>
                     <input type="text" name="author" id="author" required>
                     <label for="pages">Pages: </label>
-                    <input type="number" name="pages" id="pages" required>
+                    <input type="number" min="1" name="pages" id="pages" required>
                     <label for="read">Read: </label>
                     <input type="checkbox" name="read" id="read">
-
-                    <button type="button" id="cancel-button">Cancel</button>
-                    <button type="submit">Submit</button>
-
-
-
-
-
-
-
+                
+                    <div class="form-buttons">
+                        <button type="button" id="cancel-button">Cancel</button>
+                        <button type="submit" id="submit-button">Submit</button>
+                    </div>
                 </form>
             </div>         
         </div>
-    
-
-
-
+        <div class="bookSpace">
+            
+        </div>
     <script src = "script.js"></script>
 </body>
 </html>
