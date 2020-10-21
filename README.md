@@ -8,6 +8,6 @@ Had an issue where my inputted book appears very briefly on the page and then di
 
 Things to work on:
 
-Read status coding could be cleaner(use Book prototype), this.info not working, and CSS.
+Read status coding could be cleaner(use Book prototype), this.info not working, book renders only if form is filled, and CSS.
 
 https://stsui1129.github.io/library/
