@@ -56,16 +56,16 @@ function renderBook(book) { // renders individual book cards
     bookDiv.appendChild(authorDiv);
 
     pagesDiv.classList.add("pages-div");
-    pagesDiv.textContent = book.pages;
+    pagesDiv.textContent = book.pages + " pages";
     bookDiv.appendChild(pagesDiv);
 
     readBtn.classList.add("read-btn");
     bookDiv.appendChild(readBtn);
 
     if (book.read === false) {
-        readBtn.textContent = "Not Read Yet";
+        readBtn.textContent = "Not Read";
     } else {
-        readBtn.textContent = "Read Already";
+        readBtn.textContent = "Read";
     }
 
     readBtn.addEventListener('click', () => {
@@ -75,9 +75,9 @@ function renderBook(book) { // renders individual book cards
     function toggleStatus () {
         book.read = !book.read; //turns truthy values falsy and vice-versa
         if (book.read === false) {
-            readBtn.textContent = "Not Read Yet";
+            readBtn.textContent = "Not Read";
         } else {
-            readBtn.textContent = "Read Already";
+            readBtn.textContent = "Read";
         }
     }
 

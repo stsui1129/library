@@ -1,10 +1,62 @@
+h1 {
+  display: flex;
+  justify-content: center;
+}
+
+.newBookBtn {
+  display: flex;
+  justify-content: center;
+}
+
 .bookSpace {
   display: flex;
   flex-wrap: wrap;
-  
+}
+/* book cards */
+.book-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 5px solid black;
+  border-radius: 10px;
+  height: 280px;
+  width: 280px;
+  padding: 10px;
+  margin: 30px;
+  background-color: rgba(96, 216, 216, 0.5);
 }
 
+.title-div {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
 
+.author-div {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.pages-div {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.read-btn {
+  font-size: 20px;
+  height: 30px;
+  width: 120px;
+  margin-bottom: 20px;
+  border: solid 1px black;
+}
+
+.remove-btn {
+  font-size: 20px;
+  height: 30px;
+  width: 120px;
+  border: solid 1px black;
+}
+
+/* modal form */
 input {
     display: flex;
     margin: 10px;
@@ -40,8 +92,6 @@ input#title {
     display: inline-block;
     transform: scale(1.5);
   }
-
-
 
 .modal {
     position: fixed;
