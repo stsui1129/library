@@ -1,7 +1,7 @@
-let myLibrary = [];
+let myLibrary = []; //create an empty array
 
-let book1 = new Book("To Kill A Mockingbird", "Harper Lee", "296", read);
-let book2 = new Book("The Hobbit", "J. R. R. Tolkien", "310", read);
+let book1 = new Book("To Kill A Mockingbird", "Harper Lee", "296", false);
+let book2 = new Book("The Hobbit", "J. R. R. Tolkien", "310", true);
 myLibrary.push(book1);
 myLibrary.push(book2);
 
@@ -20,24 +20,20 @@ function addBookToLibrary() {
     const author = document.getElementById('author').value;
     const pages = document.getElementById('pages').value;
     const read = document.getElementById('read').checked;
-
-    const form = document.getElementById('form');
     
     let book = new Book(title, author, pages, read);
     myLibrary.push(book);
-
-    console.log(myLibrary);
-
+    // console.log(myLibrary);
     renderBook(book);
 }
 
-function renderLibrary() {
+function renderLibrary() { // renders all the books in myLibrary array
     for (let i=0; i<myLibrary.length; i++){
         renderBook(myLibrary[i]);
     }
 }
 
-function renderBook(book) {
+function renderBook(book) { // renders individual book cards
     const library = document.querySelector(".bookSpace");
     const bookDiv = document.createElement("div");
     const titleDiv = document.createElement("div");
@@ -48,7 +44,7 @@ function renderBook(book) {
     const removeBtn = document.createElement("button");
 
     bookDiv.classList.add("book-div");
-    // bookDiv.setAttribute("id", myLibrary.indexOf(book));
+    bookDiv.setAttribute("id", myLibrary.indexOf(book));
     library.appendChild(bookDiv);
 
     titleDiv.classList.add("title-div");
@@ -64,12 +60,36 @@ function renderBook(book) {
     bookDiv.appendChild(pagesDiv);
 
     readBtn.classList.add("read-btn");
-    readBtn.textContent = "Read?";
     bookDiv.appendChild(readBtn);
+
+    if (book.read === false) {
+        readBtn.textContent = "Not Read Yet";
+    } else {
+        readBtn.textContent = "Read Already";
+    }
+
+    readBtn.addEventListener('click', () => {
+        toggleStatus();
+    });
+
+    function toggleStatus () {
+        book.read = !book.read; //turns truthy values falsy and vice-versa
+        if (book.read === false) {
+            readBtn.textContent = "Not Read Yet";
+        } else {
+            readBtn.textContent = "Read Already";
+        }
+    }
 
     removeBtn.classList.add("remove-btn");
     removeBtn.textContent = "Remove";
     bookDiv.appendChild(removeBtn);
+
+    removeBtn.addEventListener('click', () => {
+        myLibrary.splice(myLibrary.indexOf(book), 1);
+        library.removeChild(bookDiv);
+        // console.log(myLibrary);
+    });
 }
 
 // //https://www.w3schools.com/howto/howto_css_modals.asp
@@ -86,18 +106,25 @@ closeButton.addEventListener("click", toggleModal);
 const cancelButton = document.querySelector("#cancel-button");
 cancelButton.addEventListener("click", toggleModal);
 
-// const submitButton = document.querySelector("#submit-button");
-// submitButton.addEventListener("click", addBookToLibrary); //old code
-
 const submitButton = document.querySelector("#submit-button");
 submitButton.addEventListener("click", (event) => {
     addBookToLibrary();
     toggleModal();
-    event.preventDefault();
+    event.preventDefault(); //prevents the form from reloading the script
+    formReset();
 });
+
+function formReset() {
+    const form = document.getElementById('form');
+    form.reset(); //clears the values in the form since we're preventing that with preventDefault()
+}
 
 function toggleModal() {
     modal.classList.toggle("show-modal"); //toggles between .modal class and .show-modal class
 }
 
 renderLibrary();
+
+console.log(book1.title);
+console.log(book1.read);
+console.log(book1.info); //not working?

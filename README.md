@@ -49,3 +49,5 @@ and reload the page
 It seems like any button will do the reset
 [9:36 PM]
 submit: The button submits the form data to the server. This is the default if the attribute is not specified, or if the attribute is dynamically changed to an empty or invalid value.
+
+
