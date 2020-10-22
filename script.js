@@ -1,7 +1,7 @@
 let myLibrary = []; //create an empty array
 
-let book1 = new Book("To Kill A Mockingbird", "Harper Lee", "296", false);
-let book2 = new Book("The Hobbit", "J. R. R. Tolkien", "310", true);
+let book1 = new Book("To Kill A Mockingbird", "Harper Lee", "296", "Not Read");
+let book2 = new Book("The Hobbit", "J. R. R. Tolkien", "310", "Read");
 myLibrary.push(book1);
 myLibrary.push(book2);
 
@@ -14,6 +14,10 @@ function Book(title, author, pages, read) {
         return `${this.title} by ${this.author}, ${this.pages}, ${this.read}`;
     }
 }
+
+console.log(book1.title);
+console.log(myLibrary[0].title);
+console.log(book1.info());
 
 function addBookToLibrary() {
     const title = document.getElementById('title').value;
@@ -124,7 +128,3 @@ function toggleModal() {
 }
 
 renderLibrary();
-
-console.log(book1.title);
-console.log(book1.read);
-console.log(book1.info); //not working?

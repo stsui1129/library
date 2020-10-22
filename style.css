@@ -19,11 +19,12 @@ h1 {
   align-items: center;
   border: 5px solid black;
   border-radius: 10px;
-  height: 280px;
-  width: 280px;
+  height: 350px;
+  width: 250px;
   padding: 10px;
   margin: 30px;
-  background-color: rgba(96, 216, 216, 0.5);
+  box-shadow: 10px 10px;
+  background: linear-gradient(#cda9dd, #9198e5);
 }
 
 .title-div {
@@ -45,6 +46,7 @@ h1 {
   font-size: 20px;
   height: 30px;
   width: 120px;
+  margin-top: 60px;
   margin-bottom: 20px;
   border: solid 1px black;
 }

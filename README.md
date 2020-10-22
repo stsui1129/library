@@ -1,6 +1,6 @@
 Library Project
 ---
-In this project, I created a small library app allowing users to display books through entering details in a form.
+In this project, I created a small library app allowing users to display books on the screen by entering details through a form.
 
 Issues encountered:
 
@@ -8,6 +8,9 @@ Had an issue where my inputted book appears very briefly on the page and then di
 
 Things to work on:
 
-Read status coding could be cleaner(use Book prototype), this.info not working, book renders only if form is filled, and CSS.
+Utilise Book.prototype for toggling read status
+Get console.log(myLibrary[].read) to display Read/Not Read instead of true/false
+Prevent book from rendering if form is not filled completely
+CSS
 
 https://stsui1129.github.io/library/
