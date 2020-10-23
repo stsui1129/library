@@ -38,7 +38,7 @@ function renderLibrary() { // renders all the books in myLibrary array
 }
 
 function renderBook(book) { // renders individual book cards
-    const library = document.querySelector(".bookSpace");
+    const library = document.querySelector(".book-space");
     const bookDiv = document.createElement("div");
     const titleDiv = document.createElement("div");
     const authorDiv = document.createElement("div");

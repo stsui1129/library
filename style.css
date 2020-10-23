@@ -3,12 +3,12 @@ h1 {
   justify-content: center;
 }
 
-.newBookBtn {
+.new-book-btn {
   display: flex;
   justify-content: center;
 }
 
-.bookSpace {
+.book-space {
   display: flex;
   flex-wrap: wrap;
 }
