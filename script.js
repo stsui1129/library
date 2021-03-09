@@ -1,10 +1,5 @@
 let myLibrary = []; //create an empty array
 
-let book1 = new Book("To Kill A Mockingbird", "Harper Lee", "296", "Not Read");
-let book2 = new Book("The Hobbit", "J. R. R. Tolkien", "310", "Read");
-myLibrary.push(book1);
-myLibrary.push(book2);
-
 function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
@@ -15,7 +10,14 @@ function Book(title, author, pages, read) {
     }
 }
 
+let book1 = new Book("To Kill A Mockingbird", "Harper Lee", "296", "Not Read");
+let book2 = new Book("The Hobbit", "J. R. R. Tolkien", "310", "Read");
+myLibrary.push(book1);
+myLibrary.push(book2);
+
+console.log(book1);
 console.log(book1.title);
+console.log(book1.read);
 console.log(myLibrary[0].title);
 console.log(book1.info());
 
@@ -48,7 +50,7 @@ function renderBook(book) { // renders individual book cards
     const removeBtn = document.createElement("button");
 
     bookDiv.classList.add("book-div");
-    bookDiv.setAttribute("id", myLibrary.indexOf(book));
+    bookDiv.setAttribute("id", myLibrary.indexOf(book)); //set id to book index in array
     library.appendChild(bookDiv);
 
     titleDiv.classList.add("title-div");
@@ -66,17 +68,15 @@ function renderBook(book) { // renders individual book cards
     readBtn.classList.add("read-btn");
     bookDiv.appendChild(readBtn);
 
-    if (book.read === false) {
+    if (book.read === "Not Read") { //this is only for mockingbird/hobbit
         readBtn.textContent = "Not Read";
     } else {
         readBtn.textContent = "Read";
     }
 
-    readBtn.addEventListener('click', () => {
-        toggleStatus();
-    });
+    readBtn.addEventListener('click', toggleStatus);
 
-    function toggleStatus () {
+    function toggleStatus() {
         book.read = !book.read; //turns truthy values falsy and vice-versa
         if (book.read === false) {
             readBtn.textContent = "Not Read";
